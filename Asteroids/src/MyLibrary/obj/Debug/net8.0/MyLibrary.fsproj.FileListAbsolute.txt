@@ -1,0 +1,14 @@
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\bin\Debug\net8.0\MyLibrary.deps.json
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\bin\Debug\net8.0\MyLibrary.dll
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\bin\Debug\net8.0\MyLibrary.pdb
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\bin\Debug\net8.0\MyLibrary.xml
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\MyLibrary.fsproj.AssemblyReference.cache
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\MyLibrary.AssemblyInfoInputs.cache
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\MyLibrary.AssemblyInfo.fs
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\MyLibrary.fsproj.CoreCompileInputs.cache
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\MyLibrary.sourcelink.json
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\MyLibrary.dll
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\refint\MyLibrary.dll
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\MyLibrary.xml
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\MyLibrary.pdb
+C:\Users\caro_\OneDrive\Documentos\Repositorios\Asteroid-PA\Asteroids\src\MyLibrary\obj\Debug\net8.0\ref\MyLibrary.dll
