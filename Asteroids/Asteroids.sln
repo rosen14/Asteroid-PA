@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3412018-F819-444B-B9D4-A13E1922C016}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MyProject", "src\MyProject\MyProject.fsproj", "{2D31C671-1F56-4E27-8C2A-8EF86500DA32}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "main", "src\main\main.fsproj", "{2D31C671-1F56-4E27-8C2A-8EF86500DA32}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MyLibrary", "src\MyLibrary\MyLibrary.fsproj", "{72E1ADA9-EC31-402E-BD41-B4FD5F4BA73A}"
 EndProject

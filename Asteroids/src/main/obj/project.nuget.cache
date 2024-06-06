@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AaSXr67vPdjR9ILKWeCAMENGa9Kq10PuCw5YGgmC2IRh6pvmi2EqV7ahPezghPrt8XhFNy0tsVtJsZyOmPBebg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\main\\main.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\valen\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512"
+  ],
+  "logs": []
+}
