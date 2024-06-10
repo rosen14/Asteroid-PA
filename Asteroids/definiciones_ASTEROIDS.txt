@@ -3,6 +3,10 @@ Tipos y records
 
 FPS: uint #Frames per second
 
+Window:
+	Width: uint
+	Height: uint
+	
 Position:
 	X
 	Y
@@ -11,20 +15,9 @@ Velocity:
 	VX:
 	VY:
 
-
-Movement:
-	Forward
-	Backward
-	None
-
 Spin:
-| Clockwise
-| Counterclockwise
-	
-	
-Action:
-	Fire: (dispara | no dispara)
-	Movement: (se mueve | no se mueve)
+	| Clockwise
+	| Counterclockwise
 	
 Size:
 	Small
@@ -32,14 +25,14 @@ Size:
 	Large
 
 Asteroid:
-	Size
-	Velocity
-	Position
+	Size: Size
+	Velocity: Velocity
+	Position: Position
 	
 Ship:
-	Position
-	Orientation
-	Velocity
+	Position: Position
+	Orientation: uint
+	Velocity: Velocity
 	
 Bullet:
 	Position: Position
@@ -50,6 +43,7 @@ Frame:
 	Asteroids: List<Asteroid>
 	Bullets: List<Bullet>
 	Score: int
+	Window: Window
 
 Acceleration:
    | Accelerate
@@ -59,39 +53,37 @@ Acceleration:
 Actions:
 	Accelerate: Acceleration
 	Rotate: Spin
+	Fire: Bool
 
+Definir mapa de puntajes {'Small': ...; 'Medium': ...; 'Large': ...}
 ----------------------------------------------------------------------------------------
 	
+0 - Inicializar datos
+
 	Funciones
 
-De verificación:
-1 - Un asteroide chocó la nave? -> Game Over
-2 - Una bala chocó un asteroide? -> Actualizar lista de asteroides, actualizar lista de balas
+Función updateFrame: Input: Frame; accion| Output: Frame
+	1 - Chequear colisiones:
+		a - Un asteroide chocó la nave? True -> raise Game Over
+		b - Una bala chocó un asteroide? 
+			b1 - Función que divide un asteroide grande en 2 medianos, uno mediano en dos pequeños o elimina uno pequeño
+				-> Actualizar lista de asteroides, actualizar lista de balas
+			b2 - Actualizar puntaje 
+			b2 - quedan asteroides? Falso -> raise Nivel finalizado
+	
+	2 - Actualizacion de nave
+		a - Actualizar posición nave : Ship -> Ship | Actualiza Ship.Position
+		b - Girar nave : action, ship -> ship | Actualiza Ship.Orientation
+		c - Acelerar/desacelerar nave : action, ship -> ship | Actualiza Ship.Velocity
 
-De acciones: Tomando como input una acción (aceleración, giro y disparo)
-Función updateFrame: Input: Frame | Output: Frame
-	1 - Actualizar posición nave : Ship -> Ship
-	2 - Acelerar/desacelerar nave (Actualiza velocidad de nave)
-	3 - Girar nave -> Actualiza Orientación de nave
-	4 - Disparar -> Actualiza lista de bullets
-	5 - Actualizar posicion balas.
-	6 - 
-
-De 
- 
-
-
-
-update_ship_status: ship, actions -> updated_ship
-	change_ship_orientation: action, ship -> updated_orientation
-	change_ship_velocity: action, ship, updated_acceleration -> updated_velocity
-	change_ship_position: action, ship ->
-
-
-
-
-there_is_collision: ship, asteroids_list -> True|False
-check_bullet_contact: asteroids_list, bullets_list -> updated_asteroids_list
+	
+	3 - Disparar: accion, ship(para saber orientación y posicoin), List<bullets> -> List<bullets>
+	
+	4 - Actualizar posicion balas: List<bullet> -> List<bullets>
+	5 - Actualizar posicion asteroides: List<asteroids> -> List<asteroids>
+	-Cuando un objeto atraviesa los bordes de la ventana aparece por otro extremo.
+	
+	
 
 
 	
