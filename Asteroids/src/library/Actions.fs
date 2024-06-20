@@ -9,9 +9,6 @@ open Dynamics
 module Actions =
 
     let accelerateShip (ship: Ship) (input: Input) =
-        let shipAcc = 1.0 / (float fps)
-        let shipDesacc = 0.5 / (float fps)
-        let shipMaxVel = 20.0 / (float fps)
         
         let velocityDelta (ship: Ship) (thrust: bool) =
             let (velR, velTheta) = cartesianToPolar ship.Vel

@@ -1,32 +1,98 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\caro_\\OneDrive\\Documentos\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj": {}
+    "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\tests\\MyTests\\MyTests.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\caro_\\OneDrive\\Documentos\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj": {
+    "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\caro_\\OneDrive\\Documentos\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj",
-        "projectName": "MyTests",
-        "projectPath": "C:\\Users\\caro_\\OneDrive\\Documentos\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj",
-        "packagesPath": "C:\\Users\\caro_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\caro_\\OneDrive\\Documentos\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\obj\\",
+        "projectUniqueName": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj",
+        "projectName": "library",
+        "projectPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj",
+        "packagesPath": "C:\\Users\\valen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\caro_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\valen\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\sdk\\8.0.204\\FSharp\\library-packs": {},
+          "C:\\.net8\\sdk\\8.0.203\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[8.0.200, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\.net8\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\tests\\MyTests\\MyTests.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\tests\\MyTests\\MyTests.fsproj",
+        "projectName": "MyTests",
+        "projectPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\tests\\MyTests\\MyTests.fsproj",
+        "packagesPath": "C:\\Users\\valen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\tests\\MyTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\valen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\.net8\\sdk\\8.0.203\\FSharp\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj": {
+                "projectPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj"
+              }
+            }
           }
         },
         "restoreAuditProperties": {
@@ -87,7 +153,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\.net8\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
