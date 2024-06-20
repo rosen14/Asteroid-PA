@@ -46,6 +46,20 @@ module GameLogic =
         let newAsts = List.init num (fun x -> randAst())
         { game with Asteroids = game.Asteroids @ newAsts }
 
+    let spawnSaucer (game: Game) = 
+        let saucerSize = 0.1
+
+        let randInBand fraction = 
+            // genera número random en una franja de ancho "fracion" centrada en 0.5
+            (rand.NextDouble() - 0.5) * fraction + 0.5
+
+        let newSaucer = 
+            match rand.Next(2) with
+            | 0 -> {Pos = (0.0, randInBand 0.9); Dir = Right; Size = saucerSize}
+            | 1 -> {Pos = (aspect_ratio, randInBand 0.9); Dir = Left; Size = saucerSize}
+        {game with
+            Saucer = Some newSaucer}
+            
     let updateShip (game: Game) (input: Input) = 
         let ship = game.Ship
         let asts = game.Asteroids
