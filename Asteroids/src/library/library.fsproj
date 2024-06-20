@@ -6,7 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="Types.fs" />
+    <Compile Include="Constants.fs" />
+    <Compile Include="Utility.fs" />
+    <Compile Include="Collision.fs" />
+    <Compile Include="Dynamics.fs" />
+    <Compile Include="Actions.fs" />
+    <Compile Include="GameLogic.fs" />
   </ItemGroup>
 
 </Project>
