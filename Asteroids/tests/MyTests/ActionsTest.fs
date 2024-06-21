@@ -47,7 +47,7 @@ module ActionsTest =
         let newVelocty = accelerateShip ship input
         let expectedVelocity = (shipMaxVel, 0.)
         Assert.AreEqual(expectedVelocity, newVelocty)
-    (*
+    
     [<Test>]
     let ``zero Velocity `` () =
         let ship = {
@@ -65,7 +65,7 @@ module ActionsTest =
         let newVelocty = accelerateShip ship input
         let expectedVelocity = (0., 0.)
         Assert.AreEqual(expectedVelocity, newVelocty)
-    *)
+    
     [<Test>]
     let ``ship shoot bullet`` () =
         let ship = {

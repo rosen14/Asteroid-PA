@@ -180,3 +180,46 @@ module GameLogicTest =
         Assert.AreEqual(200, newGame.Score)
         Assert.AreEqual(None, newGame.Saucer)
     
+    [<Test>]
+    let ``Check game finished`` () =
+        let gameFinished = {
+            Ship = {Pos = (0., 0.); Vel = (0., 0.); Ang = 0.; Size = 0.1}
+            Asteroids = []
+            Saucer = None
+            Bullets = [{ Pos = (0.1, 0.5); Ang = 0.0; Range = 10.0 };
+                       { Pos = (0.5, 0.5); Ang = 0.0; Range = 10.0 }]
+            Score = 0
+            Lives = Two
+        }
+        
+        let gameUnfinished = {
+            Ship = {Pos = (0., 0.); Vel = (0., 0.); Ang = 0.; Size = 0.1}
+            Asteroids = [{Pos = (0.1, 0.5); Vel = (0.1, 0.2); Size = Large}]
+            Saucer = None
+            Bullets = [{ Pos = (0.1, 0.5); Ang = 0.0; Range = 10.0 };
+                       { Pos = (0.5, 0.5); Ang = 0.0; Range = 10.0 }]
+            Score = 0
+            Lives = Two
+        }
+        
+        Assert.IsTrue(checkLevelFinished gameFinished)
+        Assert.IsFalse(checkLevelFinished gameUnfinished)
+
+    [<Test>]
+    let ``Check gameover`` () =
+        let game = {
+                Ship = {Pos = (0., 0.); Vel = (0., 0.); Ang = 0.; Size = 0.1}
+                Asteroids = []
+                Saucer = None
+                Bullets = [{ Pos = (0.1, 0.5); Ang = 0.0; Range = 10.0 };
+                        { Pos = (0.5, 0.5); Ang = 0.0; Range = 10.0 }]
+                Score = 0
+                Lives = Two
+            }
+        let gamestate1 = Playing game
+        let gamestate2 = Gameover
+
+        Assert.IsFalse(checkGameOver gamestate1)
+        Assert.IsTrue(checkGameOver Gameover)
+
+    
