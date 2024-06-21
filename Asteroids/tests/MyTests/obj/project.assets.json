@@ -431,6 +431,19 @@
             "related": ".xml"
           }
         }
+      },
+      "library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FSharp.Core": "8.0.200"
+        },
+        "compile": {
+          "bin/placeholder/library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/library.dll": {}
+        }
       }
     }
   },
@@ -1066,6 +1079,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "library/1.0.0": {
+      "type": "project",
+      "path": "../../src/library/library.fsproj",
+      "msbuildProject": "../../src/library/library.fsproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1075,23 +1093,24 @@
       "NUnit >= 3.14.0",
       "NUnit.Analyzers >= 3.9.0",
       "NUnit3TestAdapter >= 4.5.0",
-      "coverlet.collector >= 6.0.0"
+      "coverlet.collector >= 6.0.0",
+      "library >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\caro_\\.nuget\\packages\\": {}
+    "C:\\Users\\Rosendo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\caro_\\OneDrive\\Documentos\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj",
+      "projectUniqueName": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj",
       "projectName": "MyTests",
-      "projectPath": "C:\\Users\\caro_\\OneDrive\\Documentos\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj",
-      "packagesPath": "C:\\Users\\caro_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\caro_\\OneDrive\\Documentos\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\obj\\",
+      "projectPath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj",
+      "packagesPath": "C:\\Users\\Rosendo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\caro_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Rosendo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1103,7 +1122,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\src\\library\\library.fsproj": {
+              "projectPath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\src\\library\\library.fsproj"
+            }
+          }
         }
       },
       "restoreAuditProperties": {

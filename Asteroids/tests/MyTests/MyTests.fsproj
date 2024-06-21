@@ -9,8 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="UnitTest1.fs"/>
-    <Compile Include="Program.fs"/>
+    <Compile Include="UnitTest1.fs" />
+    <Compile Include="TypesTest.fs" />
+    <Compile Include="UtilityTest.fs" />
+    <Compile Include="CollisionTest.fs" />
+    <Compile Include="DynamicsTest.fs" />
+    <Compile Include="ActionsTest.fs" />
+    <Compile Include="ConstantsTest.fs" />
+    <Compile Include="GameLogicTest.fs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +25,10 @@
     <PackageReference Include="NUnit" Version="3.14.0" />
     <PackageReference Include="NUnit.Analyzers" Version="3.9.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\library\library.fsproj" />
   </ItemGroup>
 
 </Project>

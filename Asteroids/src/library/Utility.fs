@@ -11,19 +11,20 @@ module Utility =
 
     let sizeMap (size: Size) = 
         match size with
-        | Large -> 0.04
-        | Medium -> 0.02
-        | Small -> 0.01
+        | Large -> 0.1
+        | Medium -> 0.08
+        | Small -> 0.04
 
-    let min_abs x y = 
-        min (abs x) (abs y)
+    let min3_abs x y z = 
+        let min_temp = min (abs x) (abs y)
+        min min_temp (abs z)
 
     let distance (pos1: float * float) (pos2: float * float) = 
         let dx1 = fst pos1 - fst pos2
         let dy1 = snd pos1 - snd pos2
-
-        let dx2 = min_abs dx1 (aspect_ratio - dx1)
-        let dy2 = min_abs dy1 (1.0 - dy1)
+    
+        let dx2 = min3_abs dx1 (aspect_ratio - dx1) (aspect_ratio + dx1)
+        let dy2 = min3_abs dy1 (1.0 - dy1) (1.0 + dy1)
         Math.Sqrt(dx2 ** 2.0 + dy2 ** 2.0)
 
     let cartesianToPolar (vec: float * float) =
@@ -48,7 +49,7 @@ module Utility =
 
     let renormalizeVelocity (vel: float*float) = 
         // Esta función auxiliar sirve para acelerar y cambiar la dirección conservando la velocidad
-        let (r, theta) = cartesianToPolar vel
+        let r = shipMaxVel
         let norm = Math.Sqrt ((fst vel)**2 + (snd vel)**2)
         let (vx, vy) = vel
         (vx * r / norm, vy * r / norm)

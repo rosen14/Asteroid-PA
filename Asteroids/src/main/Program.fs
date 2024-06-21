@@ -1,4 +1,4 @@
-﻿// For more information see https://aka.ms/fsharp-console-apps
+﻿// Test para ver que compile todo bien
 open library
 open Constants
 
