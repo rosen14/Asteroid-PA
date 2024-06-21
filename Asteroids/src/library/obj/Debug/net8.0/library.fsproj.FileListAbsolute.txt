@@ -12,3 +12,17 @@ C:\Users\valen\Desktop\ib\F#\Asteroid-PA\asteroids\src\library\obj\Debug\net8.0\
 C:\Users\valen\Desktop\ib\F#\Asteroid-PA\asteroids\src\library\obj\Debug\net8.0\library.xml
 C:\Users\valen\Desktop\ib\F#\Asteroid-PA\asteroids\src\library\obj\Debug\net8.0\library.pdb
 C:\Users\valen\Desktop\ib\F#\Asteroid-PA\asteroids\src\library\obj\Debug\net8.0\ref\library.dll
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\bin\Debug\net8.0\library.deps.json
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\bin\Debug\net8.0\library.dll
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\bin\Debug\net8.0\library.pdb
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\bin\Debug\net8.0\library.xml
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\library.fsproj.AssemblyReference.cache
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\library.AssemblyInfoInputs.cache
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\library.AssemblyInfo.fs
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\library.fsproj.CoreCompileInputs.cache
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\library.sourcelink.json
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\library.dll
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\refint\library.dll
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\library.xml
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\library.pdb
+C:\Users\Rosendo\Documents\Repositorios\Asteroid-PA\Asteroids\src\library\obj\Debug\net8.0\ref\library.dll

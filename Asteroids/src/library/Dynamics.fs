@@ -28,14 +28,14 @@ module Dynamics =
         | Small -> []
 
     let moveBullet (bullet: Bullet) = 
-        let Vx = -bulletsVelocity * Math.Cos(bullet.Ang)
-        let Vy = -bulletsVelocity * Math.Sin(bullet.Ang)
+        let Vx = bulletsVelocity * Math.Cos(bullet.Ang)
+        let Vy = bulletsVelocity * Math.Sin(bullet.Ang)
 
-        let newPosX = trueModulo ((fst bullet.Pos) + Vx / (float fps)) aspect_ratio
-        let newPosY = trueModulo ((snd bullet.Pos) + Vy / (float fps)) 1.0
+        let newPosX = trueModulo ((fst bullet.Pos) + Vx ) aspect_ratio
+        let newPosY = trueModulo ((snd bullet.Pos) + Vy ) 1.0
         let newPosition = (newPosX, newPosY)
         
-        let newRange = bullet.Range + bulletsVelocity / (float fps)
+        let newRange = bullet.Range + bulletsVelocity
 
         let newBullet = 
             { bullet with
@@ -74,7 +74,6 @@ module Dynamics =
         newAngle input.Rot
 
     let moveSaucer (saucer: Saucer) = 
-        let saucerVel = 1.0/(float fps)
         let vel = 
             match saucer.Dir with
             | Right -> (saucerVel, 0.)

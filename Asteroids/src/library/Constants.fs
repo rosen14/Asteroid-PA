@@ -11,3 +11,4 @@ module Constants =
     let shipAcc = 0.1 / (float fps)
     let shipDesacc = 0.05 / (float fps)
     let shipMaxVel = 5.0 / (float fps)
+    let saucerVel = 1.0/(float fps)

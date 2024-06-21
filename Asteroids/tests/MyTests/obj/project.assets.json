@@ -1098,33 +1098,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\valen\\.nuget\\packages\\": {}
+    "C:\\Users\\Rosendo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\tests\\MyTests\\MyTests.fsproj",
+      "projectUniqueName": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj",
       "projectName": "MyTests",
-      "projectPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\tests\\MyTests\\MyTests.fsproj",
-      "packagesPath": "C:\\Users\\valen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\tests\\MyTests\\obj\\",
+      "projectPath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\MyTests.fsproj",
+      "packagesPath": "C:\\Users\\Rosendo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\tests\\MyTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\valen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Rosendo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\.net8\\sdk\\8.0.203\\FSharp\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\8.0.204\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj": {
-              "projectPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj"
+            "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\src\\library\\library.fsproj": {
+              "projectPath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\src\\library\\library.fsproj"
             }
           }
         }
@@ -1187,7 +1187,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\.net8\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

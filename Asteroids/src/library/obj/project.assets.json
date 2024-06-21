@@ -108,25 +108,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\valen\\.nuget\\packages\\": {}
+    "C:\\Users\\Rosendo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj",
+      "projectUniqueName": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\src\\library\\library.fsproj",
       "projectName": "library",
-      "projectPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj",
-      "packagesPath": "C:\\Users\\valen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\obj\\",
+      "projectPath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\src\\library\\library.fsproj",
+      "packagesPath": "C:\\Users\\Rosendo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\src\\library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\valen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Rosendo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\.net8\\sdk\\8.0.203\\FSharp\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\8.0.204\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -168,7 +168,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\.net8\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
