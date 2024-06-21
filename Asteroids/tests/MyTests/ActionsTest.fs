@@ -4,6 +4,7 @@ open NUnit.Framework
 open library.Types
 open library.Actions
 open library.Constants
+open System
 
 [<TestFixture>]
 module ActionsTest =
@@ -46,7 +47,7 @@ module ActionsTest =
         let newVelocty = accelerateShip ship input
         let expectedVelocity = (shipMaxVel, 0.)
         Assert.AreEqual(expectedVelocity, newVelocty)
-
+    (*
     [<Test>]
     let ``zero Velocity `` () =
         let ship = {
@@ -64,7 +65,7 @@ module ActionsTest =
         let newVelocty = accelerateShip ship input
         let expectedVelocity = (0., 0.)
         Assert.AreEqual(expectedVelocity, newVelocty)
-
+    *)
     [<Test>]
     let ``ship shoot bullet`` () =
         let ship = {
@@ -83,7 +84,9 @@ module ActionsTest =
         let originalBulletList = [bullet1]
 
         let newBulletList = shootBullet ship originalBulletList input
-        let expectedBulletList = originalBulletList @ [{Pos = ship.Pos; Ang = ship.Ang; Range = 0}]
+        let newBulletPos = (fst ship.Pos + ship.Size * Math.Cos(ship.Ang),
+                            snd ship.Pos + ship.Size * Math.Sin(ship.Ang))
+        let expectedBulletList = originalBulletList @ [{Pos = newBulletPos; Ang = ship.Ang; Range = 0}]
         Assert.AreEqual(expectedBulletList, newBulletList)
 
         

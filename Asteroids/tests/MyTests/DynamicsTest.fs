@@ -27,7 +27,7 @@ module DynamicsTests =
     
     [<Test>]
     let ``moveBullet updates position and range correctly`` () =
-        let bullet = { Pos = (aspect_ratio, 0.5); Ang = 0.0; Range = 10.0 } // 
+        let bullet = { Pos = (0.5, 0.5); Ang = 0.0; Range = 10.0 } // 
         let updatedBullet = moveBullet bullet
         let newPos = (trueModulo (fst bullet.Pos + bulletsVelocity) aspect_ratio, 0.5)
         let newRange = bullet.Range + bulletsVelocity

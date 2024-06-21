@@ -10,15 +10,18 @@ open Actions
 
 module GameLogic =
 
-    let startGame (game: Game) =
+    let spawnShip (game: Game) =
         let newShip =
             { game.Ship with
-                Pos = (0.5, aspect_ratio / 2.0)
+                Pos = (aspect_ratio / 2.0, 0.5)
                 Ang = 0.0
                 Vel = (0.0, 0.0)
             }
+        newShip
+
+    let startGame (game: Game) =
         Playing {   
-            Ship = newShip
+            Ship = spawnShip game
             Asteroids = []
             Bullets = []
             Saucer = None
@@ -50,7 +53,7 @@ module GameLogic =
         let saucerSize = 0.1
 
         let randInBand fraction = 
-            // genera número random en una franja de ancho "fracion" centrada en 0.5
+            // genera número random en una franja de ancho "fraction" centrada en 0.5
             (rand.NextDouble() - 0.5) * fraction + 0.5
 
         let newSaucer = 
@@ -92,13 +95,13 @@ module GameLogic =
         let bullList = game.Bullets
         let saucer = game.Saucer
 
-        let saucerBullets = saucerShoot saucer bullList           // Bullets fired by the enemy saucer
-        let shipBullets = shootBullet ship bullList input         // Bullets fired by the player
+        let withSaucerBullets = saucerShoot saucer bullList           // Bullets fired by the enemy saucer
+        let totalBullets = shootBullet ship withSaucerBullets input         // Bullets fired by the player
         let newBullets = 
-            saucerBullets @ shipBullets
-                |> List.filter (fun x -> isBullDestroyed x astList = false)         // Destroy bullet on collision with asteroid
-                |> List.filter (fun x -> checkCollisionShipBullet ship x)      // Destroy bullet on collision with ship
-                |> List.filter (fun x -> checkCollisionSaucerBullet saucer x)  // Destroy bullet on collision with saucer
+            totalBullets
+                |> List.filter (fun x -> not (isBullDestroyed x astList))         // Destroy bullet on collision with asteroid
+                |> List.filter (fun x -> not (checkCollisionShipBullet ship x))      // Destroy bullet on collision with ship
+                |> List.filter (fun x -> not (checkCollisionSaucerBullet saucer x))  // Destroy bullet on collision with saucer
                 |> moveAndClearBullets      // Move remaining bullets and clear those that exceeded maximum range
         { game with Bullets = newBullets }
 

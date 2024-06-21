@@ -43,3 +43,8 @@ module CollisionTest =
     let ``checkCollisionShipBullet does not detect collision with distant ship`` () =
         let result = checkCollisionShipBullet ship_noncol bullet
         Assert.IsFalse(result)
+
+    [<Test>]
+    let ``checkCollisionSaucerBullet detect collision`` () =
+        let result = checkCollisionSaucerBullet saucer bullet
+        Assert.IsTrue(result)
