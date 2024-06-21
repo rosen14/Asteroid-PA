@@ -1,3 +1,8 @@
+//-------------------------------------------------//
+// Módulo dynamics: funciones que mueven los objetos 
+// y describen la dinámica
+//-------------------------------------------------//
+
 namespace library
 
 open System
@@ -9,6 +14,9 @@ open Collision
 module Dynamics =
 
     let astSplit (ast: Asteroid) = 
+        // función que toma como argumento un asteroide y devuelve
+        // dos asteroides en el mismo lugar, con velocidades random, de tamaño menor
+        // destruye el asteroid si el tamañ es small.
         let spawn2RandAsts (pos: float * float) (size: Size) =
 
             let randVel () : float * float =
@@ -28,6 +36,7 @@ module Dynamics =
         | Small -> []
 
     let moveBullet (bullet: Bullet) = 
+        // función que actualiza la posición de una bala por inercia
         let Vx = bulletsVelocity * Math.Cos(bullet.Ang)
         let Vy = bulletsVelocity * Math.Sin(bullet.Ang)
 
@@ -35,7 +44,7 @@ module Dynamics =
         let newPosY = trueModulo ((snd bullet.Pos) + Vy ) 1.0
         let newPosition = (newPosX, newPosY)
         
-        let newRange = bullet.Range + bulletsVelocity
+        let newRange = bullet.Range + 1./(float fps)
 
         let newBullet = 
             { bullet with
@@ -45,11 +54,14 @@ module Dynamics =
         newBullet
 
     let moveAndClearBullets (bullets: Bullet list) = 
+        // función que mueve las balas y destruye aquellas
+        // cuyo rango supere el máximo
         bullets
         |> List.map moveBullet
         |> List.filter (fun b -> b.Range <= maxBullRange)
 
     let shiftGeneral (pos: float*float) (vel: float*float) =
+        // función general que actualiza la posición de "pos" dada "vel", tuplas float*float
         let newPosX = trueModulo (fst pos + fst vel) aspect_ratio
         let newPosY = trueModulo (snd pos + snd vel) 1.0
         let newPosition = (newPosX, newPosY)
@@ -57,14 +69,23 @@ module Dynamics =
     
     let newPosAsteroid (asteroid: Asteroid) =
         // Función que actualiza la posición de los asteroides
-        // A los módulos se les adiciona el tamaño del objeto para que la reaparicion ocurra cuando el objeto deja de visualizarse en la pantalla
         shiftGeneral asteroid.Pos asteroid.Vel
     
     let newPosShip (ship: Ship) =
+        // Función que actualiza la posición de las naves
         shiftGeneral ship.Pos ship.Vel
-    
+
+    let moveSaucer (saucer: Saucer) = 
+        // Función que actualiza la posición de un platillo
+        let vel = 
+            match saucer.Dir with
+            | Right -> (saucerVel, 0.)
+            | Left -> (-saucerVel, 0.)
+        let newPos = shiftGeneral saucer.Pos vel
+        newPos
+
     let deltaAngle (input: Input) = 
-        // Modifica la orientación de la nave en pi/8 si el input así lo indica
+        // Dado el input (si hay rotación o no) devuelve en qué valor se rota la nave.
         let angQuantum = Math.PI/8.0
         let newAngle (rotation: Rotation) =
             match rotation with
@@ -72,11 +93,3 @@ module Dynamics =
             | Negative -> -angQuantum
             | Zero -> 0.0
         newAngle input.Rot
-
-    let moveSaucer (saucer: Saucer) = 
-        let vel = 
-            match saucer.Dir with
-            | Right -> (saucerVel, 0.)
-            | Left -> (-saucerVel, 0.)
-        let newPos = shiftGeneral saucer.Pos vel
-        newPos

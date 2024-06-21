@@ -8,10 +8,7 @@ open library.Dynamics
 
 [<TestFixture>]
 module GameLogicTest =
-    [<SetUp>]
-    let Setup () =
-        ()
-
+    
     [<Test>]
     let ``spawn 4 large asteroides`` () =
         let game = {

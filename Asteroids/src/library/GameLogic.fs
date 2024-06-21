@@ -1,3 +1,6 @@
+//--------------------------------------------------------//
+// Módulo GameLogic: funciones a ser usadas en el main loop
+//--------------------------------------------------------//
 namespace library
 
 open System
@@ -11,6 +14,7 @@ open Actions
 module GameLogic =
 
     let spawnShip (game: Game) =
+        // devuelve un ship inicial, con velocidad cero y posicionado en el centro
         let newShip =
             { game.Ship with
                 Pos = (aspect_ratio / 2.0, 0.5)
@@ -20,6 +24,7 @@ module GameLogic =
         newShip
 
     let startGame (game: Game) =
+        // devuelve el estado inicial del juego
         Playing {   
             Ship = spawnShip game
             Asteroids = []
@@ -30,16 +35,17 @@ module GameLogic =
         }
 
     let getScoreByAsteroids (asteroid: Asteroid) =
+        // dado un asteroide devuelve los puntos otorgados
         match asteroid.Size with
         | Small -> 200
         | Medium -> 100
         | Large -> 50
 
     let spawnAsteroids (game: Game) (num: int) = 
-        // Spawn asteroids at the start of the level
-        // num: number of asteroids to spawn
+        // Spawn de asteroides al inicio de un nivel
+        // num: cantidad de asteroides a spawnear
         let randAst ()=
-            // Generate a random Large asteroid located at the edges of the screen
+            // Genera asteroides Large random en los bordes de la pantalla
             let x = trueModulo ((rand.NextDouble() - 0.5) * aspect_ratio / 2.0) aspect_ratio
             let y = trueModulo ((rand.NextDouble() - 0.5) * 0.5)  1.0
             let theta = float (rand.Next(16)) * Math.PI / 8.0
@@ -50,6 +56,7 @@ module GameLogic =
         { game with Asteroids = game.Asteroids @ newAsts }
 
     let spawnSaucer (game: Game) = 
+        // spawnea un saucer random en el juego
         let saucerSize = 0.1
 
         let randInBand fraction = 
@@ -64,6 +71,8 @@ module GameLogic =
             Saucer = Some newSaucer}
             
     let updateShip (game: Game) (input: Input) = 
+        // función que actualiza el game con el estado de la nave: si se muere, devuelve un GameOver
+        // en caso contrario, devuelve un Playing Game con su estado actualizado
         let ship = game.Ship
         let asts = game.Asteroids
         let bulls = game.Bullets
@@ -90,6 +99,8 @@ module GameLogic =
                     | _ -> Playing { game with Lives = nextLives game.Lives }
 
     let updateBullets (game: Game) (input: Input) =
+        // función que actualiza el game con una nueva lista de balas
+        // quita las que colisionaron y crea las disparadas
         let ship = game.Ship
         let astList = game.Asteroids
         let bullList = game.Bullets
@@ -106,6 +117,7 @@ module GameLogic =
         { game with Bullets = newBullets }
 
     let updateAsteroids (game: Game) =
+        // función que actualiza la lista de asteroides
         let ship = game.Ship
         let astList0 = game.Asteroids
         let bullList = game.Bullets
@@ -134,6 +146,7 @@ module GameLogic =
         { game with Asteroids = newAsts; Score = game.Score + earnedScore }
 
     let updateSaucer (game: Game) =
+        // función que actualiza el estado del platillo
         let saucer = game.Saucer
 
         let bullSaucerColls =
@@ -153,13 +166,13 @@ module GameLogic =
         { game with Saucer = newSaucer; Score = game.Score + earnedScore }
 
     let checkLevelFinished (game: Game) =
-        // Check if the level is finished 
+        // Checkea si el nivel está terminado
         let asts = game.Asteroids
         let saucer = game.Saucer
         (asts = [] && Option.isNone saucer)
 
     let checkGameOver (gamestate: Gamestate) = 
-        // Check game over
+        // Checkea si hay game over
         match gamestate with
         | Gameover -> true
         | Playing _ -> false

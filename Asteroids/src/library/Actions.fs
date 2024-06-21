@@ -1,3 +1,7 @@
+//------------------------------------------------------//
+// Módulo Actions: acciones ejecutadas por el jugador 
+// (disparar, mover nave), y disparo del platillo volador
+//------------------------------------------------------//
 namespace library
 
 open System
@@ -9,7 +13,7 @@ open Dynamics
 module Actions =
 
     let accelerateShip (ship: Ship) (input: Input) =
-        
+        // función que cambia la velocidad de la nave dependiendo del input
         let velocityDelta (ship: Ship) (thrust: bool) =
             let (velR, velTheta) = cartesianToPolar ship.Vel
             match thrust with
@@ -32,6 +36,8 @@ module Actions =
         newVelocity
 
     let shootBullet (ship: Ship) (bullets: Bullet list) (input: Input) = 
+        // función  que devuelve una nueva lista de balas dependiendo de 
+        // si la nave está disparando o no
         let fire (ship: Ship) (bullets: Bullet list) =
             let newBullet = 
                 {
@@ -47,6 +53,8 @@ module Actions =
         | false -> bullets
 
     let saucerShoot (saucer: Saucer Option) (bullets: list<Bullet>)=
+        // función que devuelve una lista de balas dependiendo de si
+        // el platillo dispara o no
         let saucerFire (saucer: Saucer) (bullets: list<Bullet>) =
             let angRandom = 2.0*Math.PI*rand.NextDouble()
             let newBullet = 

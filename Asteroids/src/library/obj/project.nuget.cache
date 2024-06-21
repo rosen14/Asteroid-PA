@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Pg8/hN7Ht2mfry/3va1qs72hFLhRZISczIUgVVuBrPP6RAdMMXFQbzUvMTbWDfTFL49vi9BNBriZaEZzYJqeuw==",
+  "dgSpecHash": "oHjEUbLJsgpaPXhmqVuO9kH/c5KgH9/zzAzXZurRlQW0Y+h58z5GclE23EIB1K/7F/el6TU39cqi7mAlAVPoow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rosendo\\Documents\\Repositorios\\Asteroid-PA\\Asteroids\\src\\library\\library.fsproj",
+  "projectFilePath": "C:\\Users\\valen\\Desktop\\ib\\F#\\Asteroid-PA\\asteroids\\src\\library\\library.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rosendo\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512"
+    "C:\\Users\\valen\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512"
   ],
   "logs": []
 }

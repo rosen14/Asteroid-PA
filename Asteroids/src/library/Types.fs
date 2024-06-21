@@ -1,5 +1,7 @@
+//----------------------------------------------//
+// Módulo types: define las estructuras de datos
+//----------------------------------------------//
 namespace library
-
 
 module Types =
 
@@ -22,7 +24,7 @@ module Types =
     type Ship = {
         Pos: float * float
         Vel: float * float
-        Ang: float
+        Ang: float     // ángulo de apuntado de la nave
         Size: float    // el radio
     }
 
