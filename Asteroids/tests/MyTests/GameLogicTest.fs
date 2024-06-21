@@ -8,6 +8,9 @@ open library.Dynamics
 
 [<TestFixture>]
 module GameLogicTest =
+    [<SetUp>]
+    let Setup () =
+        ()
 
     [<Test>]
     let ``spawn 4 large asteroides`` () =
@@ -118,4 +121,62 @@ module GameLogicTest =
         
         Assert.AreEqual(expectedBulletList, newGame.Bullets)
     
+    [<Test>]
+    let ``large asteroid is split and a small one is removed`` () =
+        let game = {
+            Ship = {Pos = (0., 0.); Vel = (0., 0.); Ang = 0.; Size = 0.1}
+            Asteroids = [{Pos = (0.1, 0.5); Vel = (0.1, 0.2); Size = Large};
+                         {Pos = (0.5, 0.5); Vel = (0.1, 0.2); Size = Small}]
+            Saucer = None
+            Bullets = [{ Pos = (0.1, 0.5); Ang = 0.0; Range = 10.0 };
+                       { Pos = (0.5, 0.5); Ang = 0.0; Range = 10.0 }]
+            Score = 0
+            Lives = Two
+        }
+        
+        let newGame = updateAsteroids game
+        
+        let expectedAsteroidsSize = [Medium; Medium]
+        let actualAsteroidsSize =
+            newGame.Asteroids
+            |> List.map (fun x -> x.Size)
+
+        let expectedScore = 50 + 200
+
+        Assert.AreEqual(expectedAsteroidsSize, actualAsteroidsSize)
+        Assert.AreEqual(expectedScore, newGame.Score)
+    
+    [<Test>]
+    let ``update game without saucer`` () =
+        let game = {
+            Ship = {Pos = (0., 0.); Vel = (0., 0.); Ang = 0.; Size = 0.1}
+            Asteroids = [{Pos = (0.1, 0.5); Vel = (0.1, 0.2); Size = Large};
+                         {Pos = (0.5, 0.5); Vel = (0.1, 0.2); Size = Small}]
+            Saucer = None
+            Bullets = [{ Pos = (0.1, 0.5); Ang = 0.0; Range = 10.0 };
+                       { Pos = (0.5, 0.5); Ang = 0.0; Range = 10.0 }]
+            Score = 0
+            Lives = Two
+        }
+        
+        let newGame = updateSaucer game
+        
+        Assert.AreEqual(None, newGame.Saucer)
+
+    [<Test>]
+    let ``check score when destroying a saucer`` () =
+        let game = {
+            Ship = {Pos = (0., 0.); Vel = (0., 0.); Ang = 0.; Size = 0.1}
+            Asteroids = []
+            Saucer = Some {Pos = (0.1, 0.5); Dir = Left; Size = 0.1}
+            Bullets = [{ Pos = (0.1, 0.5); Ang = 0.0; Range = 10.0 };
+                       { Pos = (0.5, 0.5); Ang = 0.0; Range = 10.0 }]
+            Score = 0
+            Lives = Two
+        }
+        
+        let newGame = updateSaucer game
+        
+        Assert.AreEqual(200, newGame.Score)
+        Assert.AreEqual(None, newGame.Saucer)
     
