@@ -28,7 +28,7 @@ module Actions =
                         | (r, _) when r <= shipMaxVel -> velFinalUnnorm
                         | _ -> velFinalUnnorm |> renormalizeVelocity
             | false ->
-                        match cartesianToPolar velDelta with
+                        match cartesianToPolar velFinalUnnorm with
                         | (r, _) when r = 0.0  -> (0.0, 0.0)
                         | _ -> velFinalUnnorm
 
